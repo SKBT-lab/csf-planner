@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find console)/launch/visual.rviz" required="true" launch-prefix="xterm -e gdb -ex run --args"/>
+
+
+</launch>

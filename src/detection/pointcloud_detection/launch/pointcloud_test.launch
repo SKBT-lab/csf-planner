@@ -1,0 +1,9 @@
+ <launch>
+      
+  
+  <node pkg="pointcloud_detection" type="CSF_Lidar_Test" name="livox_pointcloud_processor" output="screen" >
+  <!-- 设置参数 -->
+  
+    
+  </node>
+ </launch>

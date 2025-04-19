@@ -1,0 +1,7 @@
+# config.yaml
+dis_1: 1.5
+dis_1to2: 5.0
+r: 1.0
+h: 1.5
+dir: -1
+max_num: 10

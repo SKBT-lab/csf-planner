@@ -1,0 +1,18 @@
+# config.yaml
+Vel: 2.0
+Acc: 2.0
+dev_order: 4
+min_order: 3
+vis_traj_width: 0.15
+K_soft: 100
+K_time: 50
+h_: 0.01   #差分步长
+dt_: 0.0005   #学习率
+Max_Iter: 100
+
+start_vel_lim: 0.1
+
+insert_time_thresh: 0.5 #航点最小时间间隔，避免两个航点距离过近
+
+height_fix: 1
+fixed_height: 1.5

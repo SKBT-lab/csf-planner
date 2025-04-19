@@ -1,0 +1,9 @@
+ <launch>
+      
+  
+  <node pkg="circle_detection_node" type="circle_detection_node" name="circle_detection_node" output="screen" >
+  <!-- 设置参数 -->
+  
+    
+  </node>
+ </launch>

@@ -1,0 +1,113 @@
+<launch>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_map" args="0 0 0 0 0 0 /map /world 100" /> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find console)/launch/visual.rviz" required="true" launch-prefix="xterm -e gdb -ex run --args"/>
+  <node pkg="console" type="console_node" name="console_node" output="screen" required = "true" launch-prefix="xterm -e gdb -ex run --args">
+    <remap from="~odom"         to="/fusion/odom"/>
+    <remap from="~depth"        to="/xv_sdk/xv_dev/tof_camera/image"/>
+    <remap from="~planner_cmd"  to="/position_cmd"/>
+    <remap from="~csf_topic"    to="/csf_info"/>
+
+    <!-- 各关卡是否开启 -->
+    <param name="level1_enable" value="true" type="bool" />
+    <param name="level2_enable" value="false" type="bool" />
+    <param name="level3_enable" value="false" type="bool" />
+    <param name="level4_enable" value="false" type="bool" />
+    <param name="level5_enable" value="false" type="bool" />
+
+    <!-- 触发任务流程的飞行高度 -->
+    <param name="fly_altitude" value="1.5" type="double" />
+    <!-- 圆环高度 -->
+    <param name="circle_height" value="1.45" type="double" />
+    <!-- 飞动环的初始速度 -->
+    <param name="circle2_startvel" value="1.2" type="double" />
+    <!-- 隧道高度 -->
+    <param name="suidao_height" value="1.12" type="double" />
+
+    <!-- 迷宫门高度 -->
+    <param name="door_height" value="1.1" type="double" />
+
+    <!-- 迷宫窗口高度 -->
+    <param name="window_height" value="1.1" type="double" />
+
+    <!-- 降落触发高度 -->
+    <param name="landing_height" value="0.2" type="double" />
+
+    <!-- 是否开启按真实时间戳节奏可视化 -->
+    <param name="rviz_delay" value="false" type="bool" />
+
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <param name="stagenum1" value="1" type="int" />   
+    <param name="stagenum2" value="3" type="int" />
+    <param name="stagenum3" value="6" type="int" />
+    <param name="stagenum4" value="3" type="int" />
+    <param name="stagenum5" value="2" type="int" />
+
+    <!-- 每一关起点坐标 -->
+    <!-- <param name="start1_x" value="4.5" type="double" />
+    <param name="start1_y" value="-0.2" type="double" /> 
+    <param name="start1_z" value="0.85" type="double" /> -->
+
+    <param name="start1_x" value="50" type="double" />
+    <param name="start1_y" value="0" type="double" /> 
+    <param name="start1_z" value="1.8" type="double" />
+    
+    <param name="start2_x" value="17.5" type="double" />
+    <param name="start2_y" value="0.8" type="double" />
+    <param name="start2_z" value="0.85" type="double" />
+
+    <param name="start3_x" value="21" type="double" />
+    <param name="start3_y" value="9.9" type="double" /> 
+    <param name="start3_z" value="0.85" type="double" />
+
+    <param name="start4_x" value="19" type="double" />
+    <param name="start4_y" value="21.3" type="double" />
+    <param name="start4_z" value="0.85" type="double" />
+
+    <param name="start5_x" value="1.84" type="double" />
+    <param name="start5_y" value="22.75" type="double" />
+    <param name="start5_z" value="0.85" type="double" />
+
+    <!-- 各关的初始yaw角,参数值为pai的倍数 -->
+    <param name="yaw1" value="0.0" type="double" /> 
+    <param name="yaw2" value="0.0" type="double" />
+    <param name="yaw3" value="0.5" type="double" />
+    <param name="yaw4" value="1.0" type="double" />
+    <param name="yaw5" value="1.0" type="double" />   
+
+    <!-- 每一个ID的二维码相对于降落点中心的偏置 -->
+    <param name="TagBias0_x" value="0.32" type="double" />
+    <param name="TagBias0_y" value="0.32" type="double" /> 
+    <param name="TagBias0_z" value="0.0" type="double" />
+
+    <param name="TagBias1_x" value="0.32" type="double" />
+    <param name="TagBias1_y" value="-0.32" type="double" />
+    <param name="TagBias1_z" value="0.0" type="double" />
+
+    <param name="TagBias2_x" value="0.0" type="double" />
+    <param name="TagBias2_y" value="0.0" type="double" /> 
+    <param name="TagBias2_z" value="0.0" type="double" />
+
+    <param name="TagBias3_x" value="-0.32" type="double" />
+    <param name="TagBias3_y" value="0.32" type="double" />
+    <param name="TagBias3_z" value="0.0" type="double" />
+
+    <param name="TagBias4_x" value="-0.32" type="double" />
+    <param name="TagBias4_y" value="-0.32" type="double" />
+    <param name="TagBias4_z" value="0.0" type="double" />
+
+    <param name="time_forward" value="0.0" type="double" />
+    <param name="v_thresh" value="1" type="double" />
+    <param name="v_desire" value="2" type="double" />
+    
+
+  </node>
+
+  <node pkg="csf" type="csf_node" name="csf_node" output="screen" launch-prefix="xterm -e gdb -ex run --args">
+    <remap from="odom"         to="/fusion/odom"/>
+    <remap from="depth"        to="/xv_sdk/xv_dev/tof_camera/image"/>
+    <remap from="csf_topic"        to="/csf_info"/>
+  </node>
+
+
+
+</launch>

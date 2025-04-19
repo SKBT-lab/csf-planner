@@ -1,0 +1,48 @@
+# config.yaml01
+m: 0.004
+Kt: 5.0
+Ks: 1.0
+Kf: 0.5
+Kspars: 20
+Kerase: 0
+dt: 0.01
+MaxIterations: 1000
+converg_thresh: 0.1  #布料迭代的收敛阈值
+coll_thresh: 0.1    #计算轨迹与平面交点的重合阈值
+coll_dis: 999        #碰撞容许距离
+K_drag: 0.005   #0.005
+init_vel: 5.0  #1.0
+va: 0.1    #螺旋梯度场轴向分量
+vt: 1.1     #螺旋梯度场切向分量
+
+time_forward: 0.2
+
+safetybox_w: 0.36
+safetybox_h: 0.18
+
+K_Coll_tolerance: 0.05
+
+Soft_points_num: 2
+Soft_enable_thresh: 0.1
+
+guidance_enable_thresh: 5
+
+slid_num_thresh: 100
+update_num_thresh: 10
+
+Intri_Matrix:
+  - [107.40475463867188, 0.0, 128.0]
+  - [0.0, 107.40475463867188, 72.0]
+  - [0.0, 0.0, 1.0]
+
+  # - [258, 0.0, 160]
+  # - [0.0, 258, 120]
+  # - [0.0, 0.0, 1.0]
+
+  # - [516.7852783203125, 0.0, 320.07366943359375]
+  # - [0.0, 516.7852783203125, 239.31646728515625]
+  # - [0.0, 0.0, 1.0]
+
+PC_bias: [0.0, 0.0, 0.0]
+
+commu_mode: 0    #通讯模式 0：发布布料话题 1：发布航点话题  2:单节点模式

@@ -1,0 +1,49 @@
+# config.yaml
+X_min: 0.0001     #预处理阶段直通滤波范围 
+X_max: 6.0
+Y_min: -1.5
+Y_max: 1.5
+Z_min: -1.2
+Z_max: 1.2
+
+
+m: 0.004
+Kt: 10
+Ks: 0.8
+Kf: 0.01
+dt: 0.005 #调参步骤：初始步长-》平衡位置-》受力平衡
+V0: [20.0, 0, 0]
+MaxIterations: 5
+thresh: 0.05
+
+Coll_thresh: 0.15
+
+Cloth_Width: 2.0
+Cloth_Height: 2.0
+Cloth_Depth: 1.0
+Cloth_Density: 0.2
+
+Cluster_thresh: 0.5
+Cluster_minnum: 30
+Cluster_maxnum: 500
+
+x_vg: 0.09
+y_vg: 0.09
+z_vg: 0.09
+
+Suidao_lenth: 1.5
+
+x_seg_num: 5
+y_seg_num: 10
+
+block_len: 3
+
+projection_coeff: 40
+
+level1_miny: -1.5
+level1_maxy: 1.5
+interval_num: 3
+
+state: 3
+
+x_debug: 6.5

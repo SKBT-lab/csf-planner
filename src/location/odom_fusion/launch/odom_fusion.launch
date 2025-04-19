@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="odom_fusion" type="odom_fusion_node" name="odom_fusion_node" output="screen" required = "true">
+    <remap from="~odom"      to="/xv_sdk/xv_dev/slam/pose"/>
+  </node>
+
+</launch>

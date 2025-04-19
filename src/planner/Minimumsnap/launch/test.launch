@@ -1,0 +1,8 @@
+ <launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find minimumsnap)/launch/visual.rviz" required="true"/>
+    <node name="Minimumsnap" pkg="minimumsnap" type="MiniTest" output="screen">
+  
+
+    
+  </node>
+ </launch>

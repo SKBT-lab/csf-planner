@@ -1,0 +1,8 @@
+ <launch>
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find console)/launch/visual.rviz" />
+  <node pkg="csf" type="csf_node" name="csf_node" output="screen">
+    <remap from="odom"         to="/odometry_processor/trans/odometry"/>
+    <remap from="depth"        to="/airsim_node/drone_1/front_center/DepthPerspective"/>
+    <remap from="csf_topic"        to="/csf_info"/>
+  </node>
+ </launch>
